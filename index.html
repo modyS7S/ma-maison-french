@@ -32,7 +32,11 @@
  <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9f6f5"/><stop offset="1" stop-color="#c5e4e6"/></linearGradient>
  <pattern id="floorWood" width="42" height="20" patternUnits="userSpaceOnUse"><rect width="42" height="20" fill="#d8b78f"/><path d="M0 1H42M0 19H42M18 1V19" stroke="#bd9368" stroke-width="1" opacity=".65"/></pattern>
  <pattern id="bathTiles" width="34" height="28" patternUnits="userSpaceOnUse"><rect width="34" height="28" fill="url(#tile)"/><path d="M34 0H0V28" fill="none" stroke="#9dc8cf" stroke-width="1.4"/></pattern>
+ <pattern id="plasterGrain" width="23" height="19" patternUnits="userSpaceOnUse"><circle cx="4" cy="6" r=".8" fill="#bca991" opacity=".26"/><circle cx="16" cy="13" r=".7" fill="#fff" opacity=".55"/><path d="M1 17l4-1M13 3l3-1" stroke="#c6b69f" stroke-width=".6" opacity=".22"/></pattern>
+ <pattern id="woodGrain" width="56" height="28" patternUnits="userSpaceOnUse"><path d="M0 7Q14 3 29 7T56 6M0 20Q20 16 36 20T56 19" fill="none" stroke="#986640" stroke-width=".8" opacity=".34"/><ellipse cx="32" cy="13" rx="4" ry="1.8" fill="none" stroke="#986640" stroke-width=".7" opacity=".25"/></pattern>
+ <linearGradient id="sunWash" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff9d9" stop-opacity=".55"/><stop offset=".55" stop-color="#fff9d9" stop-opacity="0"/><stop offset="1" stop-color="#7b5c54" stop-opacity=".12"/></linearGradient>
  <filter id="softShadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#27324a" flood-opacity=".18"/></filter>
+ <filter id="contactShadow" x="-30%" y="-60%" width="160%" height="220%"><feGaussianBlur stdDeviation="3"/></filter>
 </defs>
 <!-- Cinematic sky, garden and soft landscape behind the cutaway house -->
 <rect x="0" y="0" width="900" height="530" rx="18" fill="url(#skyGlow)"/>
@@ -41,11 +45,14 @@
 <path d="M12 118q14-14 28 0q14-14 28 0M812 104q12-12 24 0q12-12 24 0" fill="none" stroke="#698eaa" stroke-width="3" stroke-linecap="round" opacity=".65"/>
 <path d="M0 450Q160 430 280 462T540 455T900 445V530H0Z" fill="url(#gardenGreen)"/>
 <path d="M0 477Q210 457 390 483T900 470V530H0Z" fill="#477c4e" opacity=".35"/>
+<g stroke="#e2efbb" stroke-width="1.4" opacity=".28"><path d="M102 504l3-10M119 518l4-13M149 496l3-8M754 506l3-10M781 519l4-12M807 497l3-8M56 521l3-9M845 516l4-11"/></g>
 <g opacity=".9"><path d="M30 455V350" stroke="#76563c" stroke-width="12" stroke-linecap="round"/><circle cx="28" cy="335" r="39" fill="#5b986b"/><circle cx="51" cy="355" r="29" fill="#76b77a"/><circle cx="14" cy="365" r="24" fill="#4d8c60"/><path d="M865 456V355" stroke="#76563c" stroke-width="12" stroke-linecap="round"/><circle cx="861" cy="332" r="39" fill="#5b986b"/><circle cx="883" cy="355" r="27" fill="#76b77a"/><circle cx="844" cy="359" r="25" fill="#4d8c60"/></g>
 <g fill="#f8d5d9"><circle cx="54" cy="472" r="5"/><circle cx="69" cy="490" r="4"/><circle cx="836" cy="483" r="5"/><circle cx="851" cy="465" r="4"/></g><g fill="#ffe49a"><circle cx="43" cy="489" r="4"/><circle cx="818" cy="493" r="4"/><circle cx="866" cy="478" r="4"/></g>
 <!-- House silhouette, roof tiles, chimney and front cutaway -->
 <path d="M40 150 L450 22 L860 150 Z" fill="url(#roofPaint)" stroke="#673942" stroke-width="7" stroke-linejoin="round"/><path d="M40 150 L450 22 L860 150 Z" fill="url(#roofTiles)" opacity=".95"/>
 <path d="M92 132L450 34L808 132M143 116L450 36L757 116M200 100L450 39L700 100M260 82L450 40L640 82" fill="none" stroke="#d78a79" stroke-width="3" opacity=".75"/>
+<path d="M40 150L450 22L860 150" fill="none" stroke="#f4b8a5" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+<path d="M53 150L450 28L847 150" fill="none" stroke="#492c34" stroke-width="2" opacity=".25"/>
 <rect x="722" y="48" width="52" height="72" rx="3" fill="#a85c54" stroke="#673942" stroke-width="4"/>
 <rect x="735" y="34" width="58" height="18" rx="3" fill="#8e4948"/>
 <rect x="65" y="142" width="770" height="326" rx="5" fill="url(#wallPaint)" stroke="#b5a58e" stroke-width="7" filter="url(#softShadow)"/>
@@ -63,6 +70,11 @@
 <rect x="199" y="190" width="48" height="32" rx="3" fill="#d5a76c" stroke="#96613e" stroke-width="3"/><rect x="205" y="196" width="36" height="20" fill="#c6d8ec"/><path d="M208 213L219 202L229 211L237 202" fill="none" stroke="#659c91" stroke-width="3"/>
 <!-- Extra room details: a wall clock, rug texture and little reading book -->
 <circle cx="278" cy="211" r="17" fill="#f6ead5" stroke="#8f6a4c" stroke-width="4" filter="url(#softShadow)"/><circle cx="278" cy="211" r="12" fill="#fffaf0" stroke="#d7b889" stroke-width="1.5"/><path d="M278 202V211L286 215" fill="none" stroke="#77533b" stroke-width="2.5" stroke-linecap="round"/><circle cx="278" cy="211" r="2" fill="#77533b"/>
+<!-- Contact shadows ground the furniture in each room -->
+<ellipse cx="249" cy="289" rx="105" ry="8" fill="#4c514d" opacity=".16" filter="url(#contactShadow)"/>
+<ellipse cx="600" cy="288" rx="93" ry="8" fill="#4c514d" opacity=".16" filter="url(#contactShadow)"/>
+<ellipse cx="219" cy="445" rx="135" ry="7" fill="#4c514d" opacity=".15" filter="url(#contactShadow)"/>
+<ellipse cx="615" cy="438" rx="132" ry="7" fill="#4c514d" opacity=".14" filter="url(#contactShadow)"/>
 <!-- living room rug, sofa, pillows, coffee table and TV -->
 <ellipse cx="281" cy="270" rx="124" ry="20" fill="#e2c5ad" opacity=".85"/><ellipse cx="281" cy="270" rx="111" ry="15" fill="#f1dfc9" stroke="#caa98a" stroke-width="2"/><ellipse cx="281" cy="270" rx="92" ry="10" fill="none" stroke="#d2b495" stroke-width="1.5" stroke-dasharray="4 4"/>
 <path d="M169 251Q170 240 183 240H315Q328 240 330 252V278H169Z" fill="url(#sofa)" stroke="#315d66" stroke-width="3" filter="url(#softShadow)"/>
