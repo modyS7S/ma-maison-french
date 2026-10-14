@@ -313,8 +313,12 @@ function spin(){
  // Avoid an immediate repeat when possible.
  if(history.length&&activities.length>1&&activities[idx]===history[history.length-1])idx=(idx+1+Math.floor(Math.random()*(activities.length-1)))%activities.length;
  const offset=(360-idx*(360/activities.length)-(rotation%360)+360)%360;
+ const startRotation=rotation;
  rotation+=360*5+offset;
- canvas.style.transition='none';setRotation(rotation-1);
+ // Reset to the exact current angle first, then animate the full distance.
+ // Starting at rotation-1 made the wheel jump almost all the way instantly.
+ canvas.style.transition='none';
+ setRotation(startRotation);
  void canvas.offsetWidth;
  canvas.style.transition='transform 5.1s cubic-bezier(.12,.72,.08,1)';
  setRotation(rotation);
